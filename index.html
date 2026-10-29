@@ -174,4 +174,411 @@
 
   /* Reveal animation */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
-  .reveal.visible {
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    section { padding: 88px 0; }
+    .case { grid-template-columns: 1fr; gap: 48px; }
+    .nav-links a:not(.btn) { display: none; }
+    .step { grid-template-columns: 1fr; gap: 12px; }
+    .hero-stats { gap: 40px; }
+  }
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr; margin-top: 48px; }
+    .service { padding: 40px 28px; min-height: 0; }
+    .hero-actions .btn { width: 100%; text-align: center; }
+    .modal-box { padding: 40px 24px; }
+    h2 { font-size: 30px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#top" class="logo">RAZEVOLT IO</a>
+    <div class="nav-links">
+      <a href="#services">Advisory</a>
+      <a href="#results">Perspective</a>
+      <a href="#process">Partnership</a>
+      <button class="btn btn-ghost" data-open-modal style="padding:10px 22px;font-size:13px;">Request a Consultation</button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- 1. Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow reveal">Client Success Advisory</p>
+      <h1 class="reveal">The right clients are a decision. <span>We help you make it.</span></h1>
+      <p class="lead reveal">RazeVolt IO is a private client success advisory for established businesses and distinguished brands. We accept a limited number of partnerships at any one time.</p>
+      <div class="hero-actions reveal">
+        <button class="btn btn-primary" data-open-modal>Request a Consultation</button>
+        <a href="#process" class="btn btn-ghost">How We Partner</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div><div class="stat-num">Limited</div><div class="stat-label">Partnerships accepted at any one time</div></div>
+        <div><div class="stat-num">Direct</div><div class="stat-label">Access to the principal, throughout</div></div>
+        <div><div class="stat-num">Private</div><div class="stat-label">Every partnership held in confidence</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Advisory -->
+  <section id="services">
+    <div class="container">
+      <p class="eyebrow reveal">Advisory</p>
+      <h2 class="reveal">Where we advise.</h2>
+      <p class="lead reveal">Each strategic partnership is shaped around the business in front of us.</p>
+
+      <div class="services-grid">
+        <div class="service reveal">
+          <span class="service-index">01</span>
+          <h3>Positioning</h3>
+          <p>Clarity on what you are, who it is for, and why it commands its standing.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-index">02</span>
+          <h3>Market Selection</h3>
+          <p>Deciding where your attention belongs, and where it does not.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-index">03</span>
+          <h3>Acquisition Strategy</h3>
+          <p>A considered view of how the right clients should find you.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-index">04</span>
+          <h3>Private Advisory & Execution</h3>
+          <p>Discreet, one-to-one counsel from the principal, carried through with disciplined delivery to the standard your brand demands.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-index">05</span>
+          <h3>Scaling Phase</h3>
+          <p>Growth expanded deliberately, once the foundation has proven itself.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-index">06</span>
+          <h3>Ongoing Counsel</h3>
+          <p>Steady guidance as decisions meet the market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Perspective -->
+  <section id="results">
+    <div class="container">
+      <p class="eyebrow reveal">Perspective</p>
+      <h2 class="reveal">Most businesses do not need more activity. They need better decisions.</h2>
+      <p class="lead reveal">Our work begins with judgment and is measured by results. Three convictions guide every partnership.</p>
+      <div class="services-grid reveal" style="margin-top:56px;">
+        <div class="service"><span class="service-index">I</span><h3>Selectivity over volume</h3><p>A smaller number of the right clients outweighs a large number of the wrong ones.</p></div>
+        <div class="service"><span class="service-index">II</span><h3>Positioning before promotion</h3><p>Reach only matters once the standing of the business is clear.</p></div>
+        <div class="service"><span class="service-index">III</span><h3>Execution accountable to profits</h3><p>Strategy has no value until it produces results. Every decision is held to a single standard: the profits it delivers to the business.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Partnership -->
+  <section id="process">
+    <div class="container">
+      <p class="eyebrow reveal">Partnership</p>
+      <h2 class="reveal">How a partnership unfolds.</h2>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <div>
+            <h3>Strategy Consultation</h3>
+            <p>We begin with a focused consultation on the business, the ambition, and what has not yet worked.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <div>
+            <h3>Assessment</h3>
+            <p>We form an independent view of where you stand and where the opportunity lies.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <div>
+            <h3>Strategic Roadmap & Execution</h3>
+            <p>You receive a precise roadmap of what to pursue, in what order, and what to leave alone, then we execute it to a standard that matches your brand.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">04</div>
+          <div>
+            <h3>Retention & Predictable Scale</h3>
+            <p>We protect the clients you win and compound what works, so results become predictable and scalable rather than accidental.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Application -->
+  <section class="cta">
+    <div class="container">
+      <p class="eyebrow reveal">Partnerships</p>
+      <h2 class="reveal">Begin with a strategy consultation.</h2>
+      <p class="lead reveal">We accept a small number of partnerships at any one time. Introduce your business and, if there is a fit, we will be in touch to arrange a private consultation.</p>
+      <div class="reveal">
+        <button class="btn btn-primary" data-open-modal>Request a Consultation</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>&copy; <span id="year"></span> RazeVolt IO. All rights reserved.</span>
+    <span>Client Success Advisory</span>
+  </div>
+</footer>
+
+
+<!-- Application Modal -->
+<div class="modal" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
+
+    <div id="formWrap">
+      <h3 id="modalTitle">Request a consultation</h3>
+      <p class="sub">Tell us about your business. Partnerships are limited, and each request is reviewed personally.</p>
+
+      <form id="consultForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" required>
+        </div>
+        <div class="field">
+          <label for="budget">Monthly investment range</label>
+          <select id="budget" name="budget" required>
+            <option value="">Select a range</option>
+            <option value="Under $2,000">Under $2,000</option>
+            <option value="$2,000 - $5,000">$2,000 to $5,000</option>
+            <option value="$5,000 -$15,000 .">$5,000 to $15,000</option>
+            <option value="$15,000+">$15,000+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="goal">What are you looking to resolve?</label>
+          <textarea id="goal" name="challenge" required></textarea>
+        </div>
+        <p id="formError" class="form-error" role="alert" hidden></p>
+        <button type="submit" class="btn btn-primary">Submit Request</button>
+      </form>
+    </div>
+
+    <div class="form-success" id="successMsg">
+      <h3>Request received.</h3>
+      <p class="sub">Thank you. Each request is reviewed personally, and we will be in touch if there is a fit.</p>
+      <button class="btn btn-ghost" data-close-modal>Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+
+  // Modal
+  const modal = document.getElementById('applyModal');
+  const formWrap = document.getElementById('formWrap');
+
+  function openModal() {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('name').focus(), 50);
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-modal]').forEach((btn) => btn.addEventListener('click', openModal));
+  document.querySelectorAll('[data-close-modal]').forEach((btn) => btn.addEventListener('click', closeModal));
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // HubSpot form submission
+  (function () {
+    'use strict';
+
+    const HUBSPOT_PORTAL_ID = '247735737';
+    const HUBSPOT_FORM_GUID = '4d924fd1-510b-4e67-bedd-d61d7caa78c4';
+    const MEETING_URL = 'https://meetings.hubspot.com/YOUR-USERNAME/YOUR-MEETING-SLUG';
+    const FORM_ENDPOINT = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`;
+
+    const form = document.getElementById('consultForm');
+    if (!form) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const errorBox = document.getElementById('formError');
+    const TIMEOUT_MS = 15000;
+    let isSubmitting = false;
+
+    function buildFields(data) {
+      const fullName = (data.name || '').trim();
+      const spaceAt = fullName.indexOf(' ');
+      const firstname = spaceAt === -1 ? fullName : fullName.slice(0, spaceAt);
+      const lastname = spaceAt === -1 ? '' : fullName.slice(spaceAt + 1).trim();
+
+      const fields = [
+        { name: 'firstname', value: firstname },
+        { name: 'lastname', value: lastname },
+        { name: 'email', value: (data.email || '').trim() },
+        { name: 'company', value: (data.company || '').trim() },
+        { name: 'monthly_budget', value: data.budget || '' },
+        { name: 'growth_challenge', value: (data.challenge || '').trim() }
+      ];
+
+      return fields.filter((f) => f.value !== '');
+    }
+
+    function getHubspotCookie() {
+      const match = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+      return match ? decodeURIComponent(match[1]) : undefined;
+    }
+
+    function setLoading(isLoading) {
+      isSubmitting = isLoading;
+      if (!submitBtn) return;
+      submitBtn.disabled = isLoading;
+      if (!submitBtn.dataset.originalText) {
+        submitBtn.dataset.originalText = submitBtn.textContent;
+      }
+      submitBtn.textContent = isLoading ? 'Submitting…' : submitBtn.dataset.originalText;
+      submitBtn.setAttribute('aria-busy', String(isLoading));
+    }
+
+    function showError(message) {
+      if (errorBox) {
+        errorBox.textContent = message;
+        errorBox.hidden = false;
+      } else {
+        alert(message);
+      }
+    }
+
+    function clearError() {
+      if (errorBox) {
+        errorBox.textContent = '';
+        errorBox.hidden = true;
+      }
+    }
+
+    function friendlyError(status, body) {
+      if (status === 400 && body && body.errors && body.errors.length) {
+        return body.errors[0].message || 'Please check your details and try again.';
+      }
+      if (status === 429) return 'Too many attempts. Please wait a moment and try again.';
+      if (status >= 500) return 'Our booking system is temporarily unavailable. Please try again shortly.';
+      return 'Something went wrong. Please try again.';
+    }
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      if (isSubmitting) return;
+
+      clearError();
+
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        company: formData.get('company'),
+        budget: formData.get('budget'),
+        challenge: formData.get('challenge')
+      };
+
+      if (!data.email || !data.name) {
+        showError('Please enter your name and work email.');
+        return;
+      }
+
+      const payload = {
+        fields: buildFields(data),
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title,
+          hutk: getHubspotCookie()
+        }
+      };
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+      setLoading(true);
+
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+
+        if (res.ok) {
+          window.location.assign(MEETING_URL);
+          return;
+        }
+
+        let body = null;
+        try { body = await res.json(); } catch (_) { /* non-JSON error body */ }
+        showError(friendlyError(res.status, body));
+        setLoading(false);
+
+      } catch (err) {
+        const msg = err.name === 'AbortError'
+          ? 'The request timed out. Please check your connection and try again.'
+          : 'Network error. Please check your connection and try again.';
+        showError(msg);
+        setLoading(false);
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
