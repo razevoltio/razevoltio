@@ -10,70 +10,101 @@
 <meta property="og:description" content="Find what's holding your growth back.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14'/%3E%3Cpath d='M36 8 16 36h14l-4 20 22-30H34z' fill='%23f2a33a'/%3E%3C/svg%3E">
 <style>
-:root{--a:#f2a33a;--m:#b3b3b3;--l:#2b2b2b;--s:clamp(56px,9vw,104px)}
-*{margin:0;padding:0;box-sizing:border-box}
+:root{--a:#f2a33a;--m:#b3b3b3;--l:#2b2b2b;--s:clamp(56px,9vw,104px);--e:cubic-bezier(.2,.7,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:#000;color:#fff;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
-a{color:inherit}img{display:block;width:100%;height:auto}
+body{background:#000;color:#fff;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%;overflow-x:hidden}
+a{color:inherit}img{display:block;width:100%;max-width:100%;height:auto}
 .w{max-width:1120px;margin:0 auto;padding:0 20px}
 h1,h2,h3{font:400 clamp(28px,4.2vw,44px)/1.15 Georgia,"Times New Roman",serif}
-h1{font-size:clamp(36px,6.4vw,68px);letter-spacing:-.01em;max-width:14ch}h3{font-size:21px}
+h1{font-size:clamp(34px,6.4vw,68px);letter-spacing:-.01em;max-width:14ch}h3{font-size:21px}
 section{padding:var(--s) 0;border-top:1px solid var(--l)}
-.hero{border:0;padding-top:clamp(40px,9vw,112px)}
+.hero{border:0;padding-top:clamp(40px,9vw,112px);text-align:center}
+h1,h2,h3{text-transform:capitalize}
+.hero h1{margin-left:auto;margin-right:auto;max-width:none;font-size:clamp(25px,7.6vw,68px);text-wrap:balance}
+.hero .lead{margin-left:auto;margin-right:auto}
+.hero .acts{justify-content:center}
+h2{text-wrap:balance}
+section:not(.why) h2,section:not(.why) h2+.lead{text-align:center;margin-left:auto;margin-right:auto}
+@media(max-width:859px){.why .wl h2{text-align:center}}
 .lead,.m{color:var(--m)}.lead{max-width:640px;margin-top:16px}
-.b{display:inline-block;min-height:48px;padding:12px 28px;border:1px solid #fff;border-radius:999px;background:0;color:#fff;font-family:inherit;font-weight:600;font-size:16px;text-align:center;text-decoration:none;cursor:pointer}
+.b{display:inline-block;min-height:48px;padding:12px 28px;border:1px solid #fff;border-radius:999px;background:0;color:#fff;font-family:inherit;font-weight:600;font-size:16px;text-align:center;text-decoration:none;cursor:pointer;transition:background .25s,color .25s,transform .25s var(--e),box-shadow .25s}
 .p{background:var(--a);border-color:var(--a);color:#000}
-.b:hover{background:#fff;color:#000}.p:hover{background:#ffc064;border-color:#ffc064}
+.b:hover{background:#fff;color:#000;transform:translateY(-3px)}.p:hover{background:#ffc064;border-color:#ffc064;box-shadow:0 8px 24px rgba(242,163,58,.35)}
+.b:active{transform:translateY(0) scale(.98)}
 :focus-visible{outline:3px solid var(--a);outline-offset:3px}
 .acts{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 16px}
-header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.94);border-bottom:1px solid var(--l)}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.94);border-bottom:1px solid var(--l);transition:box-shadow .3s}
+header.sc{box-shadow:0 6px 24px rgba(0,0,0,.6)}
+#pg{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--a);transform:scaleX(0);transform-origin:0 50%}
 .h{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .lg{font-weight:700;letter-spacing:.06em;text-decoration:none}
 .mb{background:0;border:1px solid #666;color:#fff;border-radius:8px;min-height:44px;padding:0 16px;font:inherit}
 .sm{display:none;padding:8px 20px;min-height:44px}
 .lk{display:none;position:absolute;top:100%;left:0;right:0;background:#000;border-bottom:1px solid var(--l);padding:8px 20px 16px;flex-direction:column}
-.open .lk{display:flex}.lk a{padding:12px 0;text-decoration:none;color:var(--m)}.lk a:hover{color:#fff}
+.open .lk{display:flex}.lk a{padding:12px 0;text-decoration:none;color:var(--m);position:relative;transition:color .25s}.lk a:hover{color:#fff}
 .pl,.st{list-style:none;margin-top:32px}
-.pl li{padding:16px 0;border-top:1px solid var(--l)}
-.g{display:grid;gap:28px;margin-top:32px}.g>*{border-top:2px solid var(--a);padding-top:16px}
+.pl li{padding:16px 0;border-top:1px solid var(--l);transition:padding-left .3s var(--e),color .3s}
+.pl li:hover{padding-left:12px;color:#fff;border-top-color:var(--a)}
+.g{display:grid;gap:28px;margin-top:32px}.g>*{border-top:2px solid var(--a);padding-top:16px;transition:transform .35s var(--e)}
+.g>*:hover{transform:translateY(-6px)}
 .g p,.st p,.rw p,figcaption p{color:var(--m);margin-top:6px}
 .wk{display:grid;gap:32px;margin-top:32px}figcaption{padding-top:12px}figcaption small{color:var(--a);font-size:15px}
+.ph{overflow:hidden;border-radius:6px;background:#111}
+.ph img{aspect-ratio:4/5;height:auto;object-fit:cover;transition:transform .8s var(--e)}
+.wk figure:last-child .ph img{aspect-ratio:7/5}
+figure:hover .ph img{transform:scale(1.05)}
 .st{counter-reset:n}.st li{counter-increment:n;display:grid;grid-template-columns:48px 1fr;padding:18px 0;border-top:1px solid var(--l)}
 .st li:before{content:counter(n,decimal-leading-zero);color:var(--a);font-weight:600}
 .rw{display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--l)}
 .box{border:1px solid var(--a);padding:clamp(22px,5vw,44px);margin-top:28px}.box ul{margin:16px 0 24px 20px}.box li{margin-bottom:8px}
-details{border-top:1px solid var(--l)}summary{cursor:pointer;font-weight:600;padding:14px 0;min-height:48px}details p{color:var(--m);padding-bottom:16px}
+details{border-top:1px solid var(--l)}summary{cursor:pointer;font-weight:600;padding:14px 0;min-height:48px;transition:color .25s}summary:hover{color:var(--a)}
+details p{color:var(--m);padding-bottom:16px}details[open] p{animation:fd .4s var(--e)}
 .cta{text-align:center}.cta .lead{margin:16px auto}.cta .acts{justify-content:center}
 .note{font-size:14px;color:var(--m);margin-top:12px;max-width:640px}
 footer{border-top:1px solid var(--l);padding:32px 0;color:var(--m);font-size:14px}
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:rgba(0,0,0,.96);border-top:1px solid var(--l);transform:translateY(110%);transition:transform .25s}.bar.on{transform:none}.bar .b{width:100%}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:rgba(0,0,0,.96);border-top:1px solid var(--l);transform:translateY(110%);transition:transform .35s var(--e)}.bar.on{transform:none}.bar .b{width:100%}
 dialog{margin:auto;width:min(480px,100%);background:#0a0a0a;color:#fff;border:1px solid var(--l);padding:36px 24px 28px;max-height:100dvh;overflow:auto}dialog::backdrop{background:rgba(0,0,0,.85)}
-.x{position:absolute;top:6px;right:6px;width:48px;height:48px;background:0;border:0;color:#fff;font-size:30px;cursor:pointer}
+dialog[open]{animation:pop .35s var(--e);display:flex;flex-direction:column;justify-content:center}
+dialog h2,dialog .lead,dialog .note,dialog label{text-align:center}
+dialog .lead,dialog .note{margin-left:auto;margin-right:auto}dialog[open]::backdrop{animation:fd .35s}
+.x{position:absolute;top:6px;right:6px;width:48px;height:48px;background:0;border:0;color:#fff;font-size:30px;cursor:pointer;transition:transform .3s var(--e)}.x:hover{transform:rotate(90deg)}
 label{display:block;margin-top:18px;font-size:15px;color:var(--m)}
-input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;background:#000;color:#fff;border:1px solid #777;border-radius:0;font:inherit;font-size:16px}
+input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;background:#000;color:#fff;border:1px solid #777;border-radius:0;font:inherit;font-size:16px;transition:border-color .25s,box-shadow .25s}
+input:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(242,163,58,.25);outline:0}
 .er{color:#ff8f8f;min-height:1.6em;margin:12px 0 8px;font-size:15px}dialog .b{width:100%}
-.why .w{display:grid;gap:40px}.wr{min-width:0}.wl h2{font-size:clamp(32px,4.6vw,52px)}
+.why .w{display:grid;gap:40px}.wr{min-width:0}
+.why .w>h2{text-align:center;max-width:none;font-size:clamp(19px,5.2vw,40px)}
 .chain{list-style:none;display:flex;font-size:15px;color:var(--m)}
 .chain li{flex:1;position:relative;padding-top:26px}.chain li:last-child{flex:none}
 .chain li:before{content:"";position:absolute;left:0;top:0;width:13px;height:13px;border-radius:50%;background:var(--a)}
 .chain li:not(:last-child):after{content:"";position:absolute;left:13px;right:0;top:6px;height:1px;background:var(--a)}
-.cap{margin:14px 0 28px;font-size:15px;color:var(--m)}.why .rw h3{font-size:22px}
-.aim{margin-top:28px;font:400 20px/1.5 Georgia,"Times New Roman",serif}.lb{margin-top:28px;font-weight:600}
+.cap{margin:14px 0 28px;font-size:15px;color:var(--m)}.why .rw h3{font-size:18px}.why .rw p{font-size:15px}
+.lb{margin-top:36px;padding-top:32px;border-top:1px solid var(--l);font:400 clamp(20px,3.2vw,28px)/1.3 Georgia,"Times New Roman",serif;text-align:center;text-wrap:balance;text-transform:capitalize}
+.lb::after{content:"";display:block;width:48px;height:2px;background:var(--a);margin:20px auto 0}
+.why .acts{justify-content:center;margin-top:24px}
+
+/* animations */
+@keyframes up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes fd{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.hero .w>*{animation:up .9s var(--e) both}
+.hero .w>:nth-child(2){animation-delay:.12s}.hero .w>:nth-child(3){animation-delay:.24s}.hero .w>:nth-child(4){animation-delay:.36s}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s var(--e),transform .8s var(--e)}
+.rv.in{opacity:1;transform:none}
+
 @media(max-width:639px){.chain{flex-direction:column}.chain li{flex:none;padding:0 0 20px 30px}.chain li:last-child{padding-bottom:0}.chain li:before{top:5px}.chain li:not(:last-child):after{left:6px;right:auto;top:18px;bottom:0;width:1px;height:auto}}
 @media(max-width:859px){footer{padding-bottom:96px}}
-@media(max-width:639px){.acts .b{width:100%}dialog{width:100%;max-width:none;height:100dvh;border:0}}
-@media(min-width:860px){.lk{display:flex;position:static;flex-direction:row;gap:28px;padding:0;border:0;background:none}.mb{display:none}.sm{display:inline-block}.g{grid-template-columns:repeat(3,1fr);gap:36px}.pl{columns:2;column-gap:48px}.pl li{break-inside:avoid}.wk{grid-template-columns:1fr 1fr}.wk figure:last-child{grid-column:1/-1}.why .w{grid-template-columns:5fr 6fr;gap:64px}.wl{position:sticky;top:96px;align-self:start}.bar{display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar{transition:none}}
+@media(max-width:639px){.acts .b{width:100%}dialog{width:100%;max-width:none;height:100dvh;border:0}.ph img{aspect-ratio:4/5;max-height:72vh}.wk figure:last-child .ph img{aspect-ratio:7/5}.st li{grid-template-columns:40px 1fr}}
+@media(min-width:860px){.lk{display:flex;position:static;flex-direction:row;gap:28px;padding:0;border:0;background:none}.lk a:after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:var(--a);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--e)}.lk a:hover:after{transform:scaleX(1)}.mb{display:none}.sm{display:inline-block}.g{grid-template-columns:repeat(3,1fr);gap:36px}.pl{columns:2;column-gap:48px}.pl li{break-inside:avoid}.wk{grid-template-columns:1fr 1fr}.wk figure:last-child{grid-column:1/-1}.wk figure:last-child .ph img{aspect-ratio:16/9}.why .w{grid-template-columns:5fr 6fr;gap:40px 64px}.why .w>h2{grid-column:1/-1}.wl{position:sticky;top:96px;align-self:start}.bar{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
-</head>
-<body>
-<header id="hd"><div class="w h">
+ <header id="hd"><div class="w h">
 <a class="lg" href="#top">RAZEVOLT IO</a>
 <nav class="lk" id="nv" aria-label="Main"><a href="#problems">Growth Barriers</a><a href="#approach">Methodology</a><a href="#work">Concepts</a><a href="#how">Roadmap</a><a href="#faq">FAQs</a></nav>
 <button class="b p sm" data-open>Request a Concept</button>
-<button class="mb" id="mb" aria-expanded="false" aria-controls="nv">Menu</button>
-</div></header>
- 
+<button class="mb" id="mb" aria-expanded="false" aria-controls="nv">Overview</button>
+</div><div id="pg"></div></header>
 <main id="top">
 <section class="hero"><div class="w">
 <h1>Find what's holding your growth back.</h1>
@@ -81,7 +112,6 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 <div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button><a class="b" data-call href="#">Book a Strategy Call</a></div>
 <p class="m">A complimentary visual concept, created for your brand, or a focused discussion about your growth.</p>
 </div></section>
- 
 <section id="problems"><div class="w">
 <h2>Where growth gets stuck</h2>
 <p class="lead">Every organisation is different, but the frustrations are often familiar.</p>
@@ -96,7 +126,6 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 <p class="lead">If one of these sounds familiar, that is the discussion we are here for.</p>
 <div class="acts"><a class="b" data-call href="#">Book a Strategy Call</a></div>
 </div></section>
- 
 <section id="approach"><div class="w">
 <h2>Built around your ambitions, not a package</h2>
 <p class="lead">We don't hand every client the same bundle of services. We start with your situation, find what is limiting growth, and build the work around that.</p>
@@ -107,19 +136,16 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 </div>
 <p class="note">Depending on what we find, work may involve creative strategy and visual development, advertising creative and testing, paid media strategy and optimisation, marketing performance analysis, growth strategy and supporting workflows, or automation and technology.</p>
 </div></section>
- 
 <section id="work"><div class="w">
 <h2>Selected Creative Concepts</h2>
 <p class="lead">A selection of creative concepts developed to demonstrate our approach to visual communication, advertising, and brand presentation.</p>
-<p class="note">Self-initiated concepts, not client campaigns, with no performance data attached. The brands shown are not clients and have not endorsed this work.</p>
 <div class="wk">
-<figure><img src="concept-shinola.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Concept visual for Shinola: a steel watch with a black dial on a sunlit desk beside architecture books and drawings, headline Built Between Meetings"><figcaption><small>Shinola</small><h3>Built Between Meetings</h3><p>For those who move between ambition and everyday life. A creative concept that brings craftsmanship into the rhythm of a modern working day.</p></figcaption></figure>
-<figure><img src="concept-brew.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Concept visual for Brew: an orange-dial chronograph watch on an espresso bar with coffee beans, headline The Golden Hour Espresso"><figcaption><small>Brew</small><h3>The Golden Hour Espresso</h3><p>More than a coffee moment. A visual built around the warmth, ritual, and irresistible appeal of that perfect golden-hour pause.</p></figcaption></figure>
-<figure><img src="concept-oura.webp" width="1200" height="858" loading="lazy" decoding="async" alt="Concept visual for Ōura: a gold smart ring standing on a reflective black slate surface"><figcaption><small>Ōura</small><h3>The Quiet Signal</h3><p>A subtle statement in a world that never switches off. A creative concept positioning personal wellness technology as an effortless part of everyday life.</p></figcaption></figure>
+<figure><div class="ph"><img src="concept-shinola.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Concept visual for Shinola: a steel watch with a black dial on a sunlit desk beside architecture books and drawings, headline Built Between Meetings"></div><figcaption><small>Shinola</small><h3>Built Between Meetings</h3><p>For those who move between ambition and everyday life. A creative concept that brings craftsmanship into the rhythm of a modern working day.</p></figcaption></figure>
+<figure><div class="ph"><img src="concept-brew.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Concept visual for Brew: an orange-dial chronograph watch on an espresso bar with coffee beans, headline The Golden Hour Espresso"></div><figcaption><small>Brew</small><h3>The Golden Hour Espresso</h3><p>More than a coffee moment. A visual built around the warmth, ritual, and irresistible appeal of that perfect golden-hour pause.</p></figcaption></figure>
+<figure><div class="ph"><img src="concept-oura.webp" width="1200" height="858" loading="lazy" decoding="async" alt="Concept visual for Ōura: a gold smart ring standing on a reflective black slate surface"></div><figcaption><small>Ōura</small><h3>The Quiet Signal</h3><p>A subtle statement in a world that never switches off. A creative concept positioning personal wellness technology as an effortless part of everyday life.</p></figcaption></figure>
 </div>
 <div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button></div>
 </div></section>
- 
 <section id="how"><div class="w">
 <h2>The path from diagnosis to scale</h2>
 <p class="lead">The shape of the work depends on your brand. The sequence stays consistent.</p>
@@ -132,10 +158,9 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 </ol>
 <p class="note">We work in a minimum of three months because meaningful growth work needs time. The first stage goes on understanding your company and setting direction. Implementation and testing then need room to run, and results need enough time to produce data points worth evaluating before decisions are made. We don't guarantee outcomes. We commit to rigorous work, open reporting and continuous refinement.</p>
 </div></section>
- 
 <section class="why" id="why"><div class="w">
-<div class="wl">
 <h2>Before we change the ad, we diagnose everything behind it.</h2>
+<div class="wl">
 <p class="lead">When spend rises and the numbers don't follow, the reflex is to swap the creative or replace whoever buys the media. Often the fault sits upstream: an offer the market isn't reaching for, a message pitched at the wrong audience, tracking that hides what is converting, or a target that never matched how your brand grows. We locate the real fault first. Then concept, testing and media buying run as a single loop in which every result sharpens the next decision.</p>
 </div>
 <div class="wr">
@@ -145,12 +170,10 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 <div class="rw"><h3>Creative and media are planned together.</h3><p>Direction, tests and media plan are one plan, not handed between separate teams. When results move, you can see which change caused it.</p></div>
 <div class="rw"><h3>Decisions follow performance feedback.</h3><p>We agree what will be measured before spend begins and review it with you regularly. Next steps rest on evidence, not taste or assumption.</p></div>
 <div class="rw"><h3>We look beyond the creative and the media buying.</h3><p>Our diagnosis covers the offer, the audience, the tracking and the goal itself, so you don't pay to fix the wrong thing.</p></div>
-<p class="aim">What changes for you: creative built to earn its budget, spend directed by evidence, and a growth plan designed to outlast any single campaign.</p>
 <p class="lb">Start with a concept built for your brand. Decide after you've seen it.</p>
 <div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button><a class="b" data-call href="#">Book a Strategy Call</a></div>
 </div></div></section>
- 
-<section><div class="w">
+ <section><div class="w">
 <h2>Founding Strategic Partnership</h2>
 <p class="lead">An opportunity for three strategic partners to work with RazeVolt IO at a preferred introductory rate.</p>
 <div class="box">
@@ -164,10 +187,9 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 <a class="b p" data-call href="#">Book a Strategy Call</a>
 </div>
 </div></section>
- 
 <section id="faq"><div class="w">
 <h2>FAQs</h2>
-<div style="margin-top:32px">
+<div class="fq" style="margin-top:32px">
 <details><summary>What does RazeVolt IO do?</summary><p>We help our strategic partners find what is holding back their growth and build tailored strategies to address it. We don't sell fixed packages. The work follows the diagnosis.</p></details>
 <details><summary>Who do you work with?</summary><p>We work with strategic partners across industries and markets who have a clear growth ambition, room for meaningful improvement, and the resources and willingness to invest and collaborate. We particularly welcome strategic partners from Europe, the UK, the US, the UAE and Saudi Arabia.</p></details>
 <details><summary>How does the complimentary visual concept work?</summary><p>Request one and we review your request personally. Where it is a good fit, we create a bespoke visual concept for your brand. It is a single visual and an introduction to how we think and work, not a campaign, a strategy or a consultation. We are not able to offer one to every request.</p></details>
@@ -178,18 +200,14 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 <details><summary>What happens after the first three months?</summary><p>After the first three months, the focus shifts to scaling. Once the data shows what is working, we build on that breakthrough: putting more behind what the evidence supports, refining or dropping what it doesn't, and expanding the work with you deliberately.</p></details>
 </div>
 </div></section>
- 
 <section class="cta"><div class="w">
 <h2>Ready to find what's holding your growth back?</h2>
 <p class="lead">Request a bespoke visual concept, or book a strategy call to talk through your growth.</p>
 <div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button><a class="b" data-call href="#">Book a Strategy Call</a></div>
 </div></section>
 </main>
- 
 <footer><div class="w">&copy; <span id="y"></span> RazeVolt IO. Growth strategy and creative.</div></footer>
- 
 <div class="bar"><button class="b p" data-open>Request a Bespoke Visual Concept</button></div>
- 
 <dialog id="d" aria-labelledby="dt">
 <button class="x" data-close aria-label="Close">&times;</button>
 <form id="f" novalidate>
@@ -204,7 +222,6 @@ input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;
 </form>
 <div id="ok" hidden><h2>Thank you.</h2><p class="lead">We review every request personally and will reply by email.</p><p style="margin-top:24px"><a class="b" data-call href="#">Book a Strategy Call</a></p></div>
 </dialog>
- 
 <script>
 const HUBSPOT_PORTAL_ID='247735737',
 HUBSPOT_FORM_GUID='4d924fd1-510b-4e67-bedd-d61d7caa78c4',
@@ -221,6 +238,27 @@ if(location.hash==='#sample')openD();
 mb.addEventListener('click',()=>mb.setAttribute('aria-expanded',hd.classList.toggle('open')));
 $$('.lk a').forEach(a=>a.addEventListener('click',()=>{hd.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
 if('IntersectionObserver'in window)new IntersectionObserver(([e])=>$('.bar').classList.toggle('on',!e.isIntersecting)).observe($('.hero'));
+
+/* scroll progress + header shadow */
+const pg=$('#pg');let tk=0;
+function onS(){tk=0;const h=document.documentElement,m=h.scrollHeight-innerHeight;pg.style.transform='scaleX('+(m>0?scrollY/m:0)+')';hd.classList.toggle('sc',scrollY>8)}
+addEventListener('scroll',()=>{if(!tk)tk=requestAnimationFrame(onS)},{passive:true});onS();
+
+/* scroll reveal */
+if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+const T='section:not(.hero):not(.why) .w>:not(.g):not(.wk):not(.st):not(.pl):not(.fq),.wl,.chain,.cap,.why .rw,.lb,.why .acts,.g>*,.wk figure,.st li,.pl li,details';
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+if(!e.isIntersecting)return;
+const el=e.target;io.unobserve(el);el.classList.add('in');
+setTimeout(()=>{el.classList.remove('rv','in');el.style.transitionDelay=''},1600);
+}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+$$(T).forEach(el=>{
+el.classList.add('rv');
+el.style.transitionDelay=Math.min([...el.parentNode.children].indexOf(el),5)*90+'ms';
+io.observe(el);
+});
+}
+
 f.addEventListener('submit',async e=>{
 e.preventDefault();er.textContent='';
 const D=new FormData(f),n=D.get('name').trim(),m=D.get('email').trim();let w=D.get('site').trim();
@@ -239,3 +277,5 @@ finally{clearTimeout(t);btn.disabled=false;btn.textContent='Request my concept'}
 </script>
 </body>
 </html>
+</head>
+<body>
