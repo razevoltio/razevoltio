@@ -99,9 +99,7 @@ input:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(242,163,58,.25);outl
 @media(min-width:860px){.lk{display:flex;position:static;flex-direction:row;gap:28px;padding:0;border:0;background:none}.lk a:after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:var(--a);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--e)}.lk a:hover:after{transform:scaleX(1)}.mb{display:none}.sm{display:inline-block}.g{grid-template-columns:repeat(3,1fr);gap:36px}.pl{columns:2;column-gap:48px}.pl li{break-inside:avoid}.wk{grid-template-columns:1fr 1fr}.wk figure:last-child{grid-column:1/-1}.wk figure:last-child .ph img{aspect-ratio:16/9}.why .w{grid-template-columns:5fr 6fr;gap:40px 64px}.why .w>h2{grid-column:1/-1}.wl{position:sticky;top:96px;align-self:start}.bar{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
-</head>
-<body>
-<header id="hd"><div class="w h">
+ <header id="hd"><div class="w h">
 <a class="lg" href="#top">RAZEVOLT IO</a>
 <nav class="lk" id="nv" aria-label="Main"><a href="#problems">Growth Barriers</a><a href="#approach">Methodology</a><a href="#work">Concepts</a><a href="#how">Roadmap</a><a href="#faq">FAQs</a></nav>
 <button class="b p sm" data-open>Request a Concept</button>
@@ -195,4 +193,89 @@ input:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(242,163,58,.25);outl
 <details><summary>What does RazeVolt IO do?</summary><p>We help our strategic partners find what is holding back their growth and build tailored strategies to address it. We don't sell fixed packages. The work follows the diagnosis.</p></details>
 <details><summary>Who do you work with?</summary><p>We work with strategic partners across industries and markets who have a clear growth ambition, room for meaningful improvement, and the resources and willingness to invest and collaborate. We particularly welcome strategic partners from Europe, the UK, the US, the UAE and Saudi Arabia.</p></details>
 <details><summary>How does the complimentary visual concept work?</summary><p>Request one and we review your request personally. Where it is a good fit, we create a bespoke visual concept for your brand. It is a single visual and an introduction to how we think and work, not a campaign, a strategy or a consultation. We are not able to offer one to every request.</p></details>
-<details><summary>What happens during a strategy call?</summary><p>It is a focused discussion about your growth, not an introduction to our services. We talk through your goals and current marketing, what you have already tried, and, where access allows, your marketing activity and account. We decide together whether RazeVolt IO is the right partner. If it is, we propose a tailored plan afterwards.</p></detail
+<details><summary>What happens during a strategy call?</summary><p>It is a focused discussion about your growth, not an introduction to our services. We talk through your goals and current marketing, what you have already tried, and, where access allows, your marketing activity and account. We decide together whether RazeVolt IO is the right partner. If it is, we propose a tailored plan afterwards.</p></details>
+<details><summary>Are solutions tailored to each brand?</summary><p>Yes. Scope, activities and tools depend on your objectives, market and resources. We don't fit anyone into a predefined package.</p></details>
+<details><summary>What is the minimum commitment?</summary><p>Three months. The first stage goes on understanding your company and setting direction, implementation and testing need time to run, and results need enough time for us to evaluate the data points.</p></details>
+<details><summary>How is the work priced?</summary><p>Investment is tailored to the scope, which we agree after understanding your requirements. Founding strategic partners join at a preferred introductory rate for their first three months.</p></details>
+<details><summary>What happens after the first three months?</summary><p>After the first three months, the focus shifts to scaling. Once the data shows what is working, we build on that breakthrough: putting more behind what the evidence supports, refining or dropping what it doesn't, and expanding the work with you deliberately.</p></details>
+</div>
+</div></section>
+<section class="cta"><div class="w">
+<h2>Ready to find what's holding your growth back?</h2>
+<p class="lead">Request a bespoke visual concept, or book a strategy call to talk through your growth.</p>
+<div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button><a class="b" data-call href="#">Book a Strategy Call</a></div>
+</div></section>
+</main>
+<footer><div class="w">&copy; <span id="y"></span> RazeVolt IO. Growth strategy and creative.</div></footer>
+<div class="bar"><button class="b p" data-open>Request a Bespoke Visual Concept</button></div>
+<dialog id="d" aria-labelledby="dt">
+<button class="x" data-close aria-label="Close">&times;</button>
+<form id="f" novalidate>
+<h2 id="dt">Request a bespoke visual concept</h2>
+<p class="lead">Three details are all we need.</p>
+<label>Name<input name="name" autocomplete="name" required></label>
+<label>Email<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
+<label>Brand website<input name="site" inputmode="url" autocomplete="url" autocapitalize="none" placeholder="yourbrand.com" required></label>
+<p id="er" class="er" role="alert"></p>
+<button class="b p" type="submit">Request my concept</button>
+<p class="note">We use these details only to respond to your request.</p>
+</form>
+<div id="ok" hidden><h2>Thank you.</h2><p class="lead">We review every request personally and will reply by email.</p><p style="margin-top:24px"><a class="b" data-call href="#">Book a Strategy Call</a></p></div>
+</dialog>
+<script>
+const HUBSPOT_PORTAL_ID='247735737',
+HUBSPOT_FORM_GUID='4d924fd1-510b-4e67-bedd-d61d7caa78c4',
+MEETING_URL='https://meetings.hubspot.com/YOUR-USERNAME/YOUR-MEETING-SLUG';
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+$('#y').textContent=new Date().getFullYear();
+$$('[data-call]').forEach(a=>a.href=MEETING_URL);
+const d=$('#d'),f=$('#f'),er=$('#er'),ok=$('#ok'),btn=f.querySelector('[type=submit]'),hd=$('#hd'),mb=$('#mb');
+function openD(){ok.hidden=true;f.hidden=false;d.showModal()}
+$$('[data-open]').forEach(b=>b.addEventListener('click',openD));
+$$('[data-close]').forEach(b=>b.addEventListener('click',()=>d.close()));
+d.addEventListener('click',e=>{if(e.target===d)d.close()});
+if(location.hash==='#sample')openD();
+mb.addEventListener('click',()=>mb.setAttribute('aria-expanded',hd.classList.toggle('open')));
+$$('.lk a').forEach(a=>a.addEventListener('click',()=>{hd.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
+if('IntersectionObserver'in window)new IntersectionObserver(([e])=>$('.bar').classList.toggle('on',!e.isIntersecting)).observe($('.hero'));
+
+/* scroll progress + header shadow */
+const pg=$('#pg');let tk=0;
+function onS(){tk=0;const h=document.documentElement,m=h.scrollHeight-innerHeight;pg.style.transform='scaleX('+(m>0?scrollY/m:0)+')';hd.classList.toggle('sc',scrollY>8)}
+addEventListener('scroll',()=>{if(!tk)tk=requestAnimationFrame(onS)},{passive:true});onS();
+
+/* scroll reveal */
+if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+const T='section:not(.hero):not(.why) .w>:not(.g):not(.wk):not(.st):not(.pl):not(.fq),.wl,.chain,.cap,.why .rw,.lb,.why .acts,.g>*,.wk figure,.st li,.pl li,details';
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+if(!e.isIntersecting)return;
+const el=e.target;io.unobserve(el);el.classList.add('in');
+setTimeout(()=>{el.classList.remove('rv','in');el.style.transitionDelay=''},1600);
+}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+$$(T).forEach(el=>{
+el.classList.add('rv');
+el.style.transitionDelay=Math.min([...el.parentNode.children].indexOf(el),5)*90+'ms';
+io.observe(el);
+});
+}
+
+f.addEventListener('submit',async e=>{
+e.preventDefault();er.textContent='';
+const D=new FormData(f),n=D.get('name').trim(),m=D.get('email').trim();let w=D.get('site').trim();
+if(!n||!/^\S+@\S+\.\S+$/.test(m)||!w){er.textContent='Please complete all three fields with a valid email address.';return}
+if(!/^https?:\/\//i.test(w))w='https://'+w;
+const i=n.indexOf(' '),fields=[['firstname',i<0?n:n.slice(0,i)],['lastname',i<0?'':n.slice(i+1).trim()],['email',m],['website',w]].filter(x=>x[1]).map(([name,value])=>({name,value}));
+const c=new AbortController(),t=setTimeout(()=>c.abort(),15000);
+btn.disabled=true;btn.textContent='Sending…';
+try{
+const r=await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields,context:{pageUri:location.href,pageName:document.title}}),signal:c.signal});
+if(!r.ok)throw 0;
+f.hidden=true;ok.hidden=false;f.reset();
+}catch(_){er.textContent='We could not send your request. Please try again, or book a strategy call instead.'}
+finally{clearTimeout(t);btn.disabled=false;btn.textContent='Request my concept'}
+});
+</script>
+</body>
+</html>
+</head>
+<body>
