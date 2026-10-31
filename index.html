@@ -1,486 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RazeVolt IO | Client Success Advisory</title>
-<meta name="description" content="RazeVolt IO is a private client success advisory for established businesses and distinguished brands.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RazeVolt IO | Growth Strategy and Creative</title>
+<meta name="description" content="RazeVolt IO works with strategic partners to find what is holding growth back and builds tailored strategies to address it.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="RazeVolt IO | Growth Strategy and Creative">
+<meta property="og:description" content="Find what's holding your growth back.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14'/%3E%3Cpath d='M36 8 16 36h14l-4 20 22-30H34z' fill='%23f2a33a'/%3E%3C/svg%3E">
 <style>
-  :root {
-    --bg: #000000;
-    --text: #ffffff;
-    --muted: rgba(255, 255, 255, 0.62);
-    --line: rgba(255, 255, 255, 0.12);
-    --card: rgba(255, 255, 255, 0.03);
-    --max: 1120px;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  .container { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
-
-  section { padding: 120px 0; border-top: 1px solid var(--line); }
-
-  .eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
-
-  h1, h2, h3 { font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; }
-  h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 20px; }
-  h3 { font-size: 22px; font-weight: 400; margin-bottom: 12px; }
-
-  p.lead { color: var(--muted); font-size: 18px; max-width: 620px; }
-
-  /* Buttons */
-  .btn {
-    display: inline-block;
-    padding: 16px 32px;
-    border-radius: 999px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid var(--text);
-    transition: all 0.3s ease;
-    background: transparent;
-    color: var(--text);
-    font-family: inherit;
-  }
-  .btn-primary { background: var(--text); color: var(--bg); }
-  .btn-primary:hover { background: transparent; color: var(--text); }
-  .btn-ghost:hover { background: var(--text); color: var(--bg); }
-
-  /* Nav */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-    backdrop-filter: blur(12px);
-    background: rgba(0, 0, 0, 0.7);
-    border-bottom: 1px solid var(--line);
-  }
-  nav .container {
-    display: flex; justify-content: space-between; align-items: center; height: 72px;
-  }
-  .logo { font-weight: 500; letter-spacing: 0.04em; font-size: 16px; }
-  .nav-links { display: flex; gap: 32px; align-items: center; }
-  .nav-links a { font-size: 14px; color: var(--muted); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
-
-  /* Hero */
-  .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; border-top: none; }
-  .hero h1 { font-size: clamp(40px, 5.8vw, 78px); max-width: 1000px; margin-bottom: 32px; }
-  .hero h1 span { color: var(--muted); }
-  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; }
-  .hero-stats {
-    display: flex; gap: 64px; margin-top: 96px; padding-top: 40px; border-top: 1px solid var(--line); flex-wrap: wrap;
-  }
-  .stat-num { font-size: 40px; font-weight: 300; }
-  .stat-label { font-size: 13px; color: var(--muted); }
-
-  /* Services */
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 72px;
-  }
-  .service {
-    background: var(--bg); padding: 56px 40px; min-height: 260px;
-    display: flex; flex-direction: column; transition: background 0.3s;
-  }
-  .service h3 { margin-bottom: 16px; }
-  .service p { margin-top: auto; }
-  .service:hover { background: var(--card); }
-  .service-index { font-size: 13px; color: var(--muted); margin-bottom: 40px; display: block; }
-  .service p { color: var(--muted); font-size: 15px; }
-
-  /* Mockup */
-  .case {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 72px;
-  }
-  .case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  .metric { background: var(--bg); padding: 40px 32px; }
-  .metric-value { font-size: 48px; font-weight: 300; margin-bottom: 8px; }
-  .metric-label { font-size: 13px; color: var(--muted); }
-  .case-quote {
-    font-size: 22px; font-weight: 300; line-height: 1.5; margin-top: 48px;
-    padding-left: 24px; border-left: 1px solid var(--text);
-  }
-  .case-author { font-size: 14px; color: var(--muted); margin-top: 16px; padding-left: 24px; }
-
-  /* How it works */
-  .steps { margin-top: 72px; display: flex; flex-direction: column; }
-  .step {
-    display: grid; grid-template-columns: 120px 1fr; gap: 32px; padding: 48px 0;
-    border-top: 1px solid var(--line);
-  }
-  .step:last-child { border-bottom: 1px solid var(--line); }
-  .step-num { font-size: 14px; color: var(--muted); padding-top: 6px; }
-  .step p { color: var(--muted); max-width: 620px; }
-
-  /* CTA / Application */
-  .cta { text-align: center; }
-  .cta p.lead { margin: 0 auto 48px; }
-  .cta-note { font-size: 13px; color: var(--muted); margin-top: 24px; }
-
-  footer {
-    border-top: 1px solid var(--line); padding: 48px 0; font-size: 13px; color: var(--muted);
-  }
-  footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-
-  /* Modal */
-  .modal {
-    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
-    display: none; align-items: center; justify-content: center; z-index: 100; padding: 24px;
-  }
-  .modal.open { display: flex; }
-  .modal-box {
-    background: #0a0a0a; border: 1px solid var(--line); width: 100%; max-width: 520px;
-    padding: 48px 40px; position: relative; max-height: 90vh; overflow-y: auto;
-  }
-  .modal-close {
-    position: absolute; top: 20px; right: 24px; background: none; border: none;
-    color: var(--muted); font-size: 28px; cursor: pointer;
-  }
-  .modal-close:hover { color: var(--text); }
-  .modal h3 { font-size: 26px; font-weight: 300; margin-bottom: 8px; }
-  .modal .sub { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
-  form .field { margin-bottom: 20px; }
-  form label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-  form input, form select, form textarea {
-    width: 100%; background: transparent; border: 1px solid var(--line); color: var(--text);
-    padding: 14px 16px; font-family: inherit; font-size: 15px; border-radius: 0;
-    transition: border-color 0.2s;
-  }
-  form input:focus, form select:focus, form textarea:focus { outline: none; border-color: var(--text); }
-  form select option { background: #000; }
-  form textarea { resize: vertical; min-height: 96px; }
-  form .btn { width: 100%; margin-top: 8px; }
-  .form-success { display: none; text-align: center; padding: 24px 0; }
-  .form-success.show { display: block; }
-
-  /* Reveal animation */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-
-  /* Responsive */
-  @media (max-width: 860px) {
-    section { padding: 88px 0; }
-    .case { grid-template-columns: 1fr; gap: 48px; }
-    .nav-links a:not(.btn) { display: none; }
-    .step { grid-template-columns: 1fr; gap: 12px; }
-    .hero-stats { gap: 40px; }
-  }
-  @media (max-width: 1024px) {
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .services-grid { grid-template-columns: 1fr; margin-top: 48px; }
-    .service { padding: 40px 28px; min-height: 0; }
-    .hero-actions .btn { width: 100%; text-align: center; }
-    .modal-box { padding: 40px 24px; }
-    h2 { font-size: 30px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { transition: none; opacity: 1; transform: none; }
-    html { scroll-behavior: auto; }
-  }
+:root{--a:#f2a33a;--m:#b3b3b3;--l:#2b2b2b;--s:clamp(56px,9vw,104px)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:#000;color:#fff;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+a{color:inherit}img{display:block;width:100%;height:auto}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font:400 clamp(28px,4.2vw,44px)/1.15 Georgia,"Times New Roman",serif}
+h1{font-size:clamp(36px,6.4vw,68px);letter-spacing:-.01em;max-width:14ch}h3{font-size:21px}
+section{padding:var(--s) 0;border-top:1px solid var(--l)}
+.hero{border:0;padding-top:clamp(40px,9vw,112px)}
+.lead,.m{color:var(--m)}.lead{max-width:640px;margin-top:16px}
+.b{display:inline-block;min-height:48px;padding:12px 28px;border:1px solid #fff;border-radius:999px;background:0;color:#fff;font-family:inherit;font-weight:600;font-size:16px;text-align:center;text-decoration:none;cursor:pointer}
+.p{background:var(--a);border-color:var(--a);color:#000}
+.b:hover{background:#fff;color:#000}.p:hover{background:#ffc064;border-color:#ffc064}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.94);border-bottom:1px solid var(--l)}
+.h{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.lg{font-weight:700;letter-spacing:.06em;text-decoration:none}
+.mb{background:0;border:1px solid #666;color:#fff;border-radius:8px;min-height:44px;padding:0 16px;font:inherit}
+.sm{display:none;padding:8px 20px;min-height:44px}
+.lk{display:none;position:absolute;top:100%;left:0;right:0;background:#000;border-bottom:1px solid var(--l);padding:8px 20px 16px;flex-direction:column}
+.open .lk{display:flex}.lk a{padding:12px 0;text-decoration:none;color:var(--m)}.lk a:hover{color:#fff}
+.pl,.st{list-style:none;margin-top:32px}
+.pl li{padding:16px 0;border-top:1px solid var(--l)}
+.g{display:grid;gap:28px;margin-top:32px}.g>*{border-top:2px solid var(--a);padding-top:16px}
+.g p,.st p,.rw p,figcaption p{color:var(--m);margin-top:6px}
+.wk{display:grid;gap:32px;margin-top:32px}figcaption{padding-top:12px}figcaption small{color:var(--a);font-size:15px}
+.st{counter-reset:n}.st li{counter-increment:n;display:grid;grid-template-columns:48px 1fr;padding:18px 0;border-top:1px solid var(--l)}
+.st li:before{content:counter(n,decimal-leading-zero);color:var(--a);font-weight:600}
+.rw{display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--l)}
+.box{border:1px solid var(--a);padding:clamp(22px,5vw,44px);margin-top:28px}.box ul{margin:16px 0 24px 20px}.box li{margin-bottom:8px}
+details{border-top:1px solid var(--l)}summary{cursor:pointer;font-weight:600;padding:14px 0;min-height:48px}details p{color:var(--m);padding-bottom:16px}
+.cta{text-align:center}.cta .lead{margin:16px auto}.cta .acts{justify-content:center}
+.note{font-size:14px;color:var(--m);margin-top:12px;max-width:640px}
+footer{border-top:1px solid var(--l);padding:32px 0;color:var(--m);font-size:14px}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:rgba(0,0,0,.96);border-top:1px solid var(--l);transform:translateY(110%);transition:transform .25s}.bar.on{transform:none}.bar .b{width:100%}
+dialog{margin:auto;width:min(480px,100%);background:#0a0a0a;color:#fff;border:1px solid var(--l);padding:36px 24px 28px;max-height:100dvh;overflow:auto}dialog::backdrop{background:rgba(0,0,0,.85)}
+.x{position:absolute;top:6px;right:6px;width:48px;height:48px;background:0;border:0;color:#fff;font-size:30px;cursor:pointer}
+label{display:block;margin-top:18px;font-size:15px;color:var(--m)}
+input{display:block;width:100%;min-height:48px;margin-top:6px;padding:12px 14px;background:#000;color:#fff;border:1px solid #777;border-radius:0;font:inherit;font-size:16px}
+.er{color:#ff8f8f;min-height:1.6em;margin:12px 0 8px;font-size:15px}dialog .b{width:100%}
+.why .w{display:grid;gap:40px}.wr{min-width:0}.wl h2{font-size:clamp(32px,4.6vw,52px)}
+.chain{list-style:none;display:flex;font-size:15px;color:var(--m)}
+.chain li{flex:1;position:relative;padding-top:26px}.chain li:last-child{flex:none}
+.chain li:before{content:"";position:absolute;left:0;top:0;width:13px;height:13px;border-radius:50%;background:var(--a)}
+.chain li:not(:last-child):after{content:"";position:absolute;left:13px;right:0;top:6px;height:1px;background:var(--a)}
+.cap{margin:14px 0 28px;font-size:15px;color:var(--m)}.why .rw h3{font-size:22px}
+.aim{margin-top:28px;font:400 20px/1.5 Georgia,"Times New Roman",serif}.lb{margin-top:28px;font-weight:600}
+@media(max-width:639px){.chain{flex-direction:column}.chain li{flex:none;padding:0 0 20px 30px}.chain li:last-child{padding-bottom:0}.chain li:before{top:5px}.chain li:not(:last-child):after{left:6px;right:auto;top:18px;bottom:0;width:1px;height:auto}}
+@media(max-width:859px){footer{padding-bottom:96px}}
+@media(max-width:639px){.acts .b{width:100%}dialog{width:100%;max-width:none;height:100dvh;border:0}}
+@media(min-width:860px){.lk{display:flex;position:static;flex-direction:row;gap:28px;padding:0;border:0;background:none}.mb{display:none}.sm{display:inline-block}.g{grid-template-columns:repeat(3,1fr);gap:36px}.pl{columns:2;column-gap:48px}.pl li{break-inside:avoid}.wk{grid-template-columns:1fr 1fr}.wk figure:last-child{grid-column:1/-1}.why .w{grid-template-columns:5fr 6fr;gap:64px}.wl{position:sticky;top:96px;align-self:start}.bar{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar{transition:none}}
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="container">
-    <a href="#top" class="logo">RAZEVOLT IO</a>
-    <div class="nav-links">
-      <a href="#services">Advisory</a>
-      <a href="#results">Perspective</a>
-      <a href="#process">Partnership</a>
-      <button class="btn btn-ghost" data-open-modal style="padding:10px 22px;font-size:13px;">Request a Consultation</button>
-    </div>
-  </div>
-</nav>
-
+<header id="hd"><div class="w h">
+<a class="lg" href="#top">RAZEVOLT IO</a>
+<nav class="lk" id="nv" aria-label="Main"><a href="#problems">Growth Barriers</a><a href="#approach">Methodology</a><a href="#work">Concepts</a><a href="#how">Roadmap</a><a href="#faq">FAQs</a></nav>
+<button class="b p sm" data-open>Request a Concept</button>
+<button class="mb" id="mb" aria-expanded="false" aria-controls="nv">Menu</button>
+</div></header>
+ 
 <main id="top">
-
-  <!-- 1. Hero -->
-  <section class="hero">
-    <div class="container">
-      <p class="eyebrow reveal">Client Success Advisory</p>
-      <h1 class="reveal">The right clients are a decision. <span>We help you make it.</span></h1>
-      <p class="lead reveal">RazeVolt IO is a private client success advisory for established businesses and distinguished brands. We accept a limited number of partnerships at any one time.</p>
-      <div class="hero-actions reveal">
-        <button class="btn btn-primary" data-open-modal>Request a Consultation</button>
-        <a href="#process" class="btn btn-ghost">How We Partner</a>
-      </div>
-      <div class="hero-stats reveal">
-        <div><div class="stat-num">Limited</div><div class="stat-label">Partnerships accepted at any one time</div></div>
-        <div><div class="stat-num">Direct</div><div class="stat-label">Access to the principal, throughout</div></div>
-        <div><div class="stat-num">Private</div><div class="stat-label">Every partnership held in confidence</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. Advisory -->
-  <section id="services">
-    <div class="container">
-      <p class="eyebrow reveal">Advisory</p>
-      <h2 class="reveal">Where we advise.</h2>
-      <p class="lead reveal">Each strategic partnership is shaped around the business in front of us.</p>
-
-      <div class="services-grid">
-        <div class="service reveal">
-          <span class="service-index">01</span>
-          <h3>Positioning</h3>
-          <p>Clarity on what you are, who it is for, and why it commands its standing.</p>
-        </div>
-        <div class="service reveal">
-          <span class="service-index">02</span>
-          <h3>Market Selection</h3>
-          <p>Deciding where your attention belongs, and where it does not.</p>
-        </div>
-        <div class="service reveal">
-          <span class="service-index">03</span>
-          <h3>Acquisition Strategy</h3>
-          <p>A considered view of how the right clients should find you.</p>
-        </div>
-        <div class="service reveal">
-          <span class="service-index">04</span>
-          <h3>Private Advisory & Execution</h3>
-          <p>Discreet, one-to-one counsel from the principal, carried through with disciplined delivery to the standard your brand demands.</p>
-        </div>
-        <div class="service reveal">
-          <span class="service-index">05</span>
-          <h3>Scaling Phase</h3>
-          <p>Growth expanded deliberately, once the foundation has proven itself.</p>
-        </div>
-        <div class="service reveal">
-          <span class="service-index">06</span>
-          <h3>Ongoing Counsel</h3>
-          <p>Steady guidance as decisions meet the market.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Perspective -->
-  <section id="results">
-    <div class="container">
-      <p class="eyebrow reveal">Perspective</p>
-      <h2 class="reveal">Most businesses do not need more activity. They need better decisions.</h2>
-      <p class="lead reveal">Our work begins with judgment and is measured by results. Three convictions guide every partnership.</p>
-      <div class="services-grid reveal" style="margin-top:56px;">
-        <div class="service"><span class="service-index">I</span><h3>Selectivity over volume</h3><p>A smaller number of the right clients outweighs a large number of the wrong ones.</p></div>
-        <div class="service"><span class="service-index">II</span><h3>Positioning before promotion</h3><p>Reach only matters once the standing of the business is clear.</p></div>
-        <div class="service"><span class="service-index">III</span><h3>Execution accountable to profits</h3><p>Strategy has no value until it produces results. Every decision is held to a single standard: the profits it delivers to the business.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. Partnership -->
-  <section id="process">
-    <div class="container">
-      <p class="eyebrow reveal">Partnership</p>
-      <h2 class="reveal">How a partnership unfolds.</h2>
-
-      <div class="steps">
-        <div class="step reveal">
-          <div class="step-num">01</div>
-          <div>
-            <h3>Strategy Consultation</h3>
-            <p>We begin with a focused consultation on the business, the ambition, and what has not yet worked.</p>
-          </div>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">02</div>
-          <div>
-            <h3>Assessment</h3>
-            <p>We form an independent view of where you stand and where the opportunity lies.</p>
-          </div>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">03</div>
-          <div>
-            <h3>Strategic Roadmap & Execution</h3>
-            <p>You receive a precise roadmap of what to pursue, in what order, and what to leave alone, then we execute it to a standard that matches your brand.</p>
-          </div>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">04</div>
-          <div>
-            <h3>Retention & Predictable Scale</h3>
-            <p>We protect the clients you win and compound what works, so results become predictable and scalable rather than accidental.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Application -->
-  <section class="cta">
-    <div class="container">
-      <p class="eyebrow reveal">Partnerships</p>
-      <h2 class="reveal">Begin with a strategy consultation.</h2>
-      <p class="lead reveal">We accept a small number of partnerships at any one time. Introduce your business and, if there is a fit, we will be in touch to arrange a private consultation.</p>
-      <div class="reveal">
-        <button class="btn btn-primary" data-open-modal>Request a Consultation</button>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <span>&copy; <span id="year"></span> RazeVolt IO. All rights reserved.</span>
-    <span>Client Success Advisory</span>
-  </div>
-</footer>
-
-
-<!-- Application Modal -->
-<div class="modal" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-box">
-    <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
-
-    <div id="formWrap">
-      <h3 id="modalTitle">Request a consultation</h3>
-      <p class="sub">Tell us about your business. Partnerships are limited, and each request is reviewed personally.</p>
-
-      <form id="applyForm" novalidate>
-        <div class="field">
-          <label for="name">Full name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="field">
-          <label for="email">Work email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="field">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" required>
-        </div>
-        <div class="field">
-          <label for="budget">Monthly investment range</label>
-          <select id="budget" name="budget" required>
-            <option value="">Select a range</option>
-            <option>$2,000 to $5,000</option>
-            <option>$5,000 to $15,000</option>
-            <option>$15,000+</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="goal">What are you looking to resolve?</label>
-          <textarea id="goal" name="goal" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Request</button>
-      </form>
-    </div>
-
-    <div class="form-success" id="successMsg">
-      <h3>Request received.</h3>
-      <p class="sub">Thank you. Each request is reviewed personally, and we will be in touch if there is a fit.</p>
-      <button class="btn btn-ghost" data-close-modal>Close</button>
-    </div>
-  </div>
+<section class="hero"><div class="w">
+<h1>Find what's holding your growth back.</h1>
+<p class="lead">RazeVolt IO works with strategic partners to identify growth bottlenecks, uncover missed opportunities and put tailored strategies into action, from creative and paid media to the workflows behind them.</p>
+<div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button><a class="b" data-call href="#">Book a Strategy Call</a></div>
+<p class="m">A complimentary visual concept, created for your brand, or a focused discussion about your growth.</p>
+</div></section>
+ 
+<section id="problems"><div class="w">
+<h2>Where growth gets stuck</h2>
+<p class="lead">Every organisation is different, but the frustrations are often familiar.</p>
+<ul class="pl">
+<li>We spend on marketing but can't tell what is actually working.</li>
+<li>Growth has plateaued and we're not sure why.</li>
+<li>We do a bit of everything, from ads to content to email, and none of it connects.</li>
+<li>Results swing from month to month and we can't explain it.</li>
+<li>Our creative doesn't look like the brand we've built.</li>
+<li>Past agency work gave us activity reports, not a clear direction.</li>
+</ul>
+<p class="lead">If one of these sounds familiar, that is the discussion we are here for.</p>
+<div class="acts"><a class="b" data-call href="#">Book a Strategy Call</a></div>
+</div></section>
+ 
+<section id="approach"><div class="w">
+<h2>Built around your ambitions, not a package</h2>
+<p class="lead">We don't hand every client the same bundle of services. We start with your situation, find what is limiting growth, and build the work around that.</p>
+<div class="g">
+<div><h3>Diagnosis first</h3><p>We look at your goals, your market and what you have already tried before proposing anything.</p></div>
+<div><h3>Solutions follow the problem</h3><p>You are not sold components you don't need. The work is shaped by what the diagnosis shows.</p></div>
+<div><h3>Strategy that gets carried out</h3><p>We can execute or support the implementation, then review results with you and refine.</p></div>
 </div>
-
+<p class="note">Depending on what we find, work may involve creative strategy and visual development, advertising creative and testing, paid media strategy and optimisation, marketing performance analysis, growth strategy and supporting workflows, or automation and technology.</p>
+</div></section>
+ 
+<section id="work"><div class="w">
+<h2>Selected Creative Concepts</h2>
+<p class="lead">A selection of creative concepts developed to demonstrate our approach to visual communication, advertising, and brand presentation.</p>
+<p class="note">Self-initiated concepts, not client campaigns, with no performance data attached. The brands shown are not clients and have not endorsed this work.</p>
+<div class="wk">
+<figure><img src="concept-shinola.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Concept visual for Shinola: a steel watch with a black dial on a sunlit desk beside architecture books and drawings, headline Built Between Meetings"><figcaption><small>Shinola</small><h3>Built Between Meetings</h3><p>For those who move between ambition and everyday life. A creative concept that brings craftsmanship into the rhythm of a modern working day.</p></figcaption></figure>
+<figure><img src="concept-brew.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Concept visual for Brew: an orange-dial chronograph watch on an espresso bar with coffee beans, headline The Golden Hour Espresso"><figcaption><small>Brew</small><h3>The Golden Hour Espresso</h3><p>More than a coffee moment. A visual built around the warmth, ritual, and irresistible appeal of that perfect golden-hour pause.</p></figcaption></figure>
+<figure><img src="concept-oura.webp" width="1200" height="858" loading="lazy" decoding="async" alt="Concept visual for Ōura: a gold smart ring standing on a reflective black slate surface"><figcaption><small>Ōura</small><h3>The Quiet Signal</h3><p>A subtle statement in a world that never switches off. A creative concept positioning personal wellness technology as an effortless part of everyday life.</p></figcaption></figure>
+</div>
+<div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button></div>
+</div></section>
+ 
+<section id="how"><div class="w">
+<h2>The path from diagnosis to scale</h2>
+<p class="lead">The shape of the work depends on your brand. The sequence stays consistent.</p>
+<ol class="st">
+<li><div><h3>Understand</h3><p>Your growth model, objectives, current marketing and what you have already tried.</p></div></li>
+<li><div><h3>Diagnose</h3><p>Where growth is being held back and where opportunities are being missed.</p></div></li>
+<li><div><h3>Strategize</h3><p>A direction aligned to your objectives, with clear priorities.</p></div></li>
+<li><div><h3>Implement</h3><p>We execute, or support your team in executing, the right solutions.</p></div></li>
+<li><div><h3>Evaluate and refine</h3><p>We review performance with you and adjust the approach.</p></div></li>
+</ol>
+<p class="note">We work in a minimum of three months because meaningful growth work needs time. The first stage goes on understanding your company and setting direction. Implementation and testing then need room to run, and results need enough time to produce data points worth evaluating before decisions are made. We don't guarantee outcomes. We commit to rigorous work, open reporting and continuous refinement.</p>
+</div></section>
+ 
+<section class="why" id="why"><div class="w">
+<div class="wl">
+<h2>Before we change the ad, we diagnose everything behind it.</h2>
+<p class="lead">When spend rises and the numbers don't follow, the reflex is to swap the creative or replace whoever buys the media. Often the fault sits upstream: an offer the market isn't reaching for, a message pitched at the wrong audience, tracking that hides what is converting, or a target that never matched how your brand grows. We locate the real fault first. Then concept, testing and media buying run as a single loop in which every result sharpens the next decision.</p>
+</div>
+<div class="wr">
+<ol class="chain" aria-label="Where results can break"><li>Offer</li><li>Creative</li><li>Audience</li><li>Tracking</li><li>Goal</li></ol>
+<p class="cap">Results can break at any of these points. We check each before changing anything.</p>
+<div class="rw"><h3>We start from your growth model.</h3><p>Before choosing channels or concepts, we map how your brand attracts, converts and keeps customers, and where the growth you want should come from. Results are then judged against those goals, not clicks.</p></div>
+<div class="rw"><h3>Creative and media are planned together.</h3><p>Direction, tests and media plan are one plan, not handed between separate teams. When results move, you can see which change caused it.</p></div>
+<div class="rw"><h3>Decisions follow performance feedback.</h3><p>We agree what will be measured before spend begins and review it with you regularly. Next steps rest on evidence, not taste or assumption.</p></div>
+<div class="rw"><h3>We look beyond the creative and the media buying.</h3><p>Our diagnosis covers the offer, the audience, the tracking and the goal itself, so you don't pay to fix the wrong thing.</p></div>
+<p class="aim">What changes for you: creative built to earn its budget, spend directed by evidence, and a growth plan designed to outlast any single campaign.</p>
+<p class="lb">Start with a concept built for your brand. Decide after you've seen it.</p>
+<div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button><a class="b" data-call href="#">Book a Strategy Call</a></div>
+</div></div></section>
+ 
+<section><div class="w">
+<h2>Founding Strategic Partnership</h2>
+<p class="lead">An opportunity for three strategic partners to work with RazeVolt IO at a preferred introductory rate.</p>
+<div class="box">
+<ul>
+<li>A preferred introductory rate for the first three months. The terms are shared on the strategy call.</li>
+<li>Offered to the first three founding strategic partners, chosen on fit and on our ability to help.</li>
+<li>We ask for honest feedback throughout.</li>
+<li>Where results permit, we may ask whether we can develop a case study or share results. That is always your choice, and we never ask for a positive testimonial.</li>
+<li>Our standard terms apply, including the three-month minimum.</li>
+</ul>
+<a class="b p" data-call href="#">Book a Strategy Call</a>
+</div>
+</div></section>
+ 
+<section id="faq"><div class="w">
+<h2>FAQs</h2>
+<div style="margin-top:32px">
+<details><summary>What does RazeVolt IO do?</summary><p>We help our strategic partners find what is holding back their growth and build tailored strategies to address it. We don't sell fixed packages. The work follows the diagnosis.</p></details>
+<details><summary>Who do you work with?</summary><p>We work with strategic partners across industries and markets who have a clear growth ambition, room for meaningful improvement, and the resources and willingness to invest and collaborate. We particularly welcome strategic partners from Europe, the UK, the US, the UAE and Saudi Arabia.</p></details>
+<details><summary>How does the complimentary visual concept work?</summary><p>Request one and we review your request personally. Where it is a good fit, we create a bespoke visual concept for your brand. It is a single visual and an introduction to how we think and work, not a campaign, a strategy or a consultation. We are not able to offer one to every request.</p></details>
+<details><summary>What happens during a strategy call?</summary><p>It is a focused discussion about your growth, not an introduction to our services. We talk through your goals and current marketing, what you have already tried, and, where access allows, your marketing activity and account. We decide together whether RazeVolt IO is the right partner. If it is, we propose a tailored plan afterwards.</p></details>
+<details><summary>Are solutions tailored to each brand?</summary><p>Yes. Scope, activities and tools depend on your objectives, market and resources. We don't fit anyone into a predefined package.</p></details>
+<details><summary>What is the minimum commitment?</summary><p>Three months. The first stage goes on understanding your company and setting direction, implementation and testing need time to run, and results need enough time for us to evaluate the data points.</p></details>
+<details><summary>How is the work priced?</summary><p>Investment is tailored to the scope, which we agree after understanding your requirements. Founding strategic partners join at a preferred introductory rate for their first three months.</p></details>
+<details><summary>What happens after the first three months?</summary><p>After the first three months, the focus shifts to scaling. Once the data shows what is working, we build on that breakthrough: putting more behind what the evidence supports, refining or dropping what it doesn't, and expanding the work with you deliberately.</p></details>
+</div>
+</div></section>
+ 
+<section class="cta"><div class="w">
+<h2>Ready to find what's holding your growth back?</h2>
+<p class="lead">Request a bespoke visual concept, or book a strategy call to talk through your growth.</p>
+<div class="acts"><button class="b p" data-open>Request a Bespoke Visual Concept</button><a class="b" data-call href="#">Book a Strategy Call</a></div>
+</div></section>
+</main>
+ 
+<footer><div class="w">&copy; <span id="y"></span> RazeVolt IO. Growth strategy and creative.</div></footer>
+ 
+<div class="bar"><button class="b p" data-open>Request a Bespoke Visual Concept</button></div>
+ 
+<dialog id="d" aria-labelledby="dt">
+<button class="x" data-close aria-label="Close">&times;</button>
+<form id="f" novalidate>
+<h2 id="dt">Request a bespoke visual concept</h2>
+<p class="lead">Three details are all we need.</p>
+<label>Name<input name="name" autocomplete="name" required></label>
+<label>Email<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
+<label>Brand website<input name="site" inputmode="url" autocomplete="url" autocapitalize="none" placeholder="yourbrand.com" required></label>
+<p id="er" class="er" role="alert"></p>
+<button class="b p" type="submit">Request my concept</button>
+<p class="note">We use these details only to respond to your request.</p>
+</form>
+<div id="ok" hidden><h2>Thank you.</h2><p class="lead">We review every request personally and will reply by email.</p><p style="margin-top:24px"><a class="b" data-call href="#">Book a Strategy Call</a></p></div>
+</dialog>
+ 
 <script>
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach((el) => io.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add('visible'));
-  }
-
-  // Modal
-  const modal = document.getElementById('applyModal');
-  const formWrap = document.getElementById('formWrap');
-  const successMsg = document.getElementById('successMsg');
-
-  function openModal() {
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => document.getElementById('name').focus(), 50);
-  }
-  function closeModal() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('[data-open-modal]').forEach((btn) => btn.addEventListener('click', openModal));
-  document.querySelectorAll('[data-close-modal]').forEach((btn) => btn.addEventListener('click', closeModal));
-  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-  // Form handling
-  // No backend yet: this validates and shows the success state.
-  // To receive submissions, set FORM_ENDPOINT to a Formspree (or similar) URL.
-  const FORM_ENDPOINT = '';
-
-  const form = document.getElementById('applyForm');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
-    let valid = true;
-    fields.forEach((field) => {
-      const ok = field.value.trim() !== '' && (field.type !== 'email' || /^\S+@\S+\.\S+$/.test(field.value));
-      field.style.borderColor = ok ? '' : '#ff6b6b';
-      if (!ok) valid = false;
-    });
-    if (!valid) return;
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.textContent = 'Submitting...';
-    submitBtn.disabled = true;
-
-    try {
-      if (FORM_ENDPOINT) {
-        const res = await fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: new FormData(form)
-        });
-        if (!res.ok) throw new Error('Submission failed');
-      }
-      formWrap.style.display = 'none';
-      successMsg.classList.add('show');
-      form.reset();
-    } catch (err) {
-      submitBtn.textContent = 'Submit Request';
-      submitBtn.disabled = false;
-      alert('Something went wrong. Please try again.');
-      return;
-    }
-    submitBtn.textContent = 'Submit Request';
-    submitBtn.disabled = false;
-  });
+const HUBSPOT_PORTAL_ID='247735737',
+HUBSPOT_FORM_GUID='4d924fd1-510b-4e67-bedd-d61d7caa78c4',
+MEETING_URL='https://meetings.hubspot.com/YOUR-USERNAME/YOUR-MEETING-SLUG';
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+$('#y').textContent=new Date().getFullYear();
+$$('[data-call]').forEach(a=>a.href=MEETING_URL);
+const d=$('#d'),f=$('#f'),er=$('#er'),ok=$('#ok'),btn=f.querySelector('[type=submit]'),hd=$('#hd'),mb=$('#mb');
+function openD(){ok.hidden=true;f.hidden=false;d.showModal()}
+$$('[data-open]').forEach(b=>b.addEventListener('click',openD));
+$$('[data-close]').forEach(b=>b.addEventListener('click',()=>d.close()));
+d.addEventListener('click',e=>{if(e.target===d)d.close()});
+if(location.hash==='#sample')openD();
+mb.addEventListener('click',()=>mb.setAttribute('aria-expanded',hd.classList.toggle('open')));
+$$('.lk a').forEach(a=>a.addEventListener('click',()=>{hd.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
+if('IntersectionObserver'in window)new IntersectionObserver(([e])=>$('.bar').classList.toggle('on',!e.isIntersecting)).observe($('.hero'));
+f.addEventListener('submit',async e=>{
+e.preventDefault();er.textContent='';
+const D=new FormData(f),n=D.get('name').trim(),m=D.get('email').trim();let w=D.get('site').trim();
+if(!n||!/^\S+@\S+\.\S+$/.test(m)||!w){er.textContent='Please complete all three fields with a valid email address.';return}
+if(!/^https?:\/\//i.test(w))w='https://'+w;
+const i=n.indexOf(' '),fields=[['firstname',i<0?n:n.slice(0,i)],['lastname',i<0?'':n.slice(i+1).trim()],['email',m],['website',w]].filter(x=>x[1]).map(([name,value])=>({name,value}));
+const c=new AbortController(),t=setTimeout(()=>c.abort(),15000);
+btn.disabled=true;btn.textContent='Sending…';
+try{
+const r=await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields,context:{pageUri:location.href,pageName:document.title}}),signal:c.signal});
+if(!r.ok)throw 0;
+f.hidden=true;ok.hidden=false;f.reset();
+}catch(_){er.textContent='We could not send your request. Please try again, or book a strategy call instead.'}
+finally{clearTimeout(t);btn.disabled=false;btn.textContent='Request my concept'}
+});
 </script>
-
 </body>
 </html>
