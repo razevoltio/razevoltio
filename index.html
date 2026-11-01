@@ -100,6 +100,7 @@ input:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(242,163,58,.25);outl
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 .ph img,.wk figure:last-child .ph img{aspect-ratio:auto!important;max-height:none!important;object-fit:contain!important}
 .eb{display:inline-block;margin-bottom:20px;padding:6px 14px;border:1px solid var(--a);border-radius:999px;color:var(--a);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+h1,h2,h3,.lb{text-transform:none!important}
 </style>
 </head>
  </body>
@@ -232,7 +233,8 @@ const HUBSPOT_PORTAL_ID='247735737',
 HUBSPOT_FORM_GUID='4d924fd1-510b-4e67-bedd-d61d7caa78c4',
 MEETING_URL='https://meetings-na2.hubspot.com/maqib';
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
-$('#y').textContent=new Date().getFullYear();
+(()=>{const S=new Set("a an the and or but nor of in on at by for to from with without into onto over around behind beyond between after before not your my our their his her its we you they it what's you've that this".split(' '));document.querySelectorAll('h1,h2,h3,.lb').forEach(el=>{let first=true,stop=false;const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),ns=[];while(w.nextNode())ns.push(w.currentNode);ns.forEach(n=>{n.nodeValue=n.nodeValue.replace(/\S+/g,t=>{const i=t.search(/[A-Za-z]/);if(i<0)return t;const core=t.toLowerCase().replace(/[^a-z'’]/g,'').replace(/’/g,"'");const up=first||stop||!S.has(core);first=false;stop=/[.!?]["')]*$/.test(t);return t.slice(0,i)+(up?t[i].toUpperCase():t[i].toLowerCase())+t.slice(i+1)})})})})();
+ $('#y').textContent=new Date().getFullYear();
 $$('[data-call]').forEach(a=>a.href=MEETING_URL);
 const d=$('#d'),f=$('#f'),er=$('#er'),ok=$('#ok'),btn=f.querySelector('[type=submit]'),hd=$('#hd'),mb=$('#mb');
 function openD(){ok.hidden=true;f.hidden=false;d.showModal()}
