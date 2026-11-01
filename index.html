@@ -274,6 +274,7 @@ try{
 const r=await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields,context:{pageUri:location.href,pageName:document.title}}),signal:c.signal});
 if(!r.ok)throw 0;
 f.hidden=true;ok.hidden=false;f.reset();
+ const q=new URLSearchParams();fields.forEach(x=>{const k={firstname:'firstName',lastname:'lastName',email:'email'}[x.name];if(k)q.set(k,x.value)});$$('[data-call]').forEach(a=>a.href=MEETING_URL+'?'+q);
 }catch(_){er.textContent='We could not send your request. Please try again, or book a strategy call instead.'}
 finally{clearTimeout(t);btn.disabled=false;btn.textContent='Request my concept'}
 });
